@@ -24,4 +24,13 @@ export class EventService {
     );
     return this.http.get<Event[]>('/Event/get-by-userid', { headers: header });
   }
+  getAllEvents() {
+    return this.http.get<Event[]>('/Event/get-all-events');
+  }
+  getEventById(id: number|undefined) {
+    if (id === undefined)
+      throw new Error('Undefined id');
+
+    return this.http.get<Event>(`/Event/${id}`);
+  }
 }

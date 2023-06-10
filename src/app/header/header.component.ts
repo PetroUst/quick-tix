@@ -11,6 +11,7 @@ import {AuthService} from "../services/auth.service";
 export class HeaderComponent implements OnInit{
   constructor(public router: Router,private authService: AuthService){}
   username:string|null = '';
+  searchQuery: string = '';
 
   ngOnInit(): void {
     this.authService.authenticated$.subscribe(logged => {
@@ -27,5 +28,13 @@ export class HeaderComponent implements OnInit{
     localStorage.clear();
     this.router.navigate(['/login']);
   }
+
+  onKeyUp(event: KeyboardEvent) {
+    if (event.key === 'Enter') {
+      this.router.navigate(['/events-find', this.searchQuery]);
+    }
+  }
+
+
   protected readonly localStorage = localStorage;
 }

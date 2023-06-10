@@ -1,0 +1,40 @@
+<main>
+  <div class="ticket-item " >
+    <div class="row-container">
+      <p>Event</p>
+      <p class="event-name">{{EventName}}</p>
+    </div>
+    <div class="row-container">
+      <p>Time</p>
+      <p class="date-time">{{Time}}</p>
+    </div>
+    <div class="row-container">
+      <p>Location</p>
+      <p class="location">{{Location}}</p>
+    </div>
+    <div class="row-container">
+      <p>Price</p>
+      <p class="price">{{Price+'$'}}</p>
+    </div>
+    <div class="row-container" *ngIf="ticket">
+      <p>State</p>
+      <p class="state">{{Status}}</p>
+    </div>
+    <form *ngIf="event">
+      <div class="input-val">
+        <label for="max-capacity">Number of tickets:</label>
+        <input type="number" id="max-capacity" name="max-capacity" [(ngModel)]="numOfTickets">
+      </div>
+      <div>
+        <button (click)="submit(0)"  id="book">Book</button>
+        <button  (click)="submit(1)" id="purchase">Purchase</button>
+      </div>
+    </form>
+    <form *ngIf="ticket">
+      <div>
+        <button (click)="cancel()" >Cancel booking</button>
+        <button  (click)="buy()" >Purchase</button>
+      </div>
+    </form>
+  </div>
+</main>

@@ -5,6 +5,7 @@
   display: flex;
   align-items: center;
   order: -1;
+  width: 100%;
 }
 
 h2{
@@ -12,7 +13,7 @@ h2{
   text-align: center;
 }
 
-input[type="search"] {
+input[type="text"] {
   padding: 10px;
   border: none;
   border-radius: 20px;
@@ -22,9 +23,9 @@ input[type="search"] {
   background-color: #f1f1f1;
   outline: none;
   transition: background-color 0.2s ease-in-out;
-  width: 500px;
+  width:100%;
 }
-input[type="search"]:focus {
+input[type="text"]:focus {
   background-color: $background-color;
 }
 
@@ -44,7 +45,11 @@ main {
   border-radius: 20px;
   display: block;
 }
+ul{
+  list-style:none;//make none
+  padding-left: 0;
 
+}
 .city-list li {
   padding: 10px;
   cursor: pointer;
@@ -60,6 +65,7 @@ main {
   padding-left: 0;
 }
 li{
+
   .row-container{
     background-color: $primary-text-color;
     display: flex;
@@ -79,13 +85,17 @@ li{
   }
   margin-bottom: 10px;
 }
-.row-container {
-  display: flex;
-  position: relative;
-  align-items: center;
-  flex-direction: row;
-  // background-color: gray;
-  margin-bottom: 0px;
+//.row-container {
+//  display: flex;
+//  position: relative;
+//  align-items: center;
+//  flex-direction: row;
+//  // background-color: gray;
+//  margin-bottom: 0;
+//}
+.content-area{
+  margin-top: 100px;
+
 }
 
 

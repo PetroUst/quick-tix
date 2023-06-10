@@ -3,9 +3,9 @@
   <nav>
     <div class="nav-left">
       <p class="logo" routerLink="/">QuickTix</p>
-      <img id="search-icon" src="assets/images/search.png" alt="search-icon">
-      <form id="search">
-        <input type="search" placeholder="Search...">
+      <img id="search-icon" src="assets/images/search.png" alt="search-icon" *ngIf="!router.url.includes('events')">
+      <form id="search" *ngIf="!router.url.includes('events')">
+        <input type="search" placeholder="Search..." [(ngModel)]="searchQuery" (keyup)="onKeyUp($event)">
       </form>
     </div>
     <ul>

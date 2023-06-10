@@ -12,6 +12,7 @@ import { UserpageComponent } from './userpage/userpage.component';
 import { HomeComponent } from './home/home.component';
 import { FindEventComponent } from './find-event/find-event.component';
 import { AddEventComponent } from './add-event/add-event.component';
+import { TicketComponent } from './ticket/ticket.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AddEventComponent } from './add-event/add-event.component';
     HomeComponent,
     FindEventComponent,
     AddEventComponent,
+    TicketComponent,
   ],
   imports: [
     BrowserModule,

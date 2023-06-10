@@ -3,6 +3,8 @@ import {Router} from "@angular/router";
 import {AuthService} from "../services/auth.service";
 import {EventService} from "../services/event.service";
 import {Event} from "../models/event";
+import {TicketService} from "../services/ticket.service";
+import {Ticket} from "../models/ticket";
 
 @Component({
   selector: 'app-userpage',
@@ -16,10 +18,12 @@ export class UserpageComponent implements OnInit {
   email = '';
   userRole = '';
   events: Event[] = [];
+  tickets: Ticket[] = [];
 
   constructor(private router: Router,
               private authService: AuthService,
-              private eventService: EventService) { }
+              private eventService: EventService,
+              private ticketService:TicketService) { }
 
   ngOnInit(): void {
     this.authService.getUser().subscribe(
@@ -34,11 +38,23 @@ export class UserpageComponent implements OnInit {
       (error) => {
         console.error(error);
       });
-    this.userRole = 'SuperUser'
-    this.eventService.getUserEvents().subscribe(
-      (events: Event[]) => {
-        this.events = events;
-      });
+    if (this.userRole === 'SuperUser') {
+      this.eventService.getUserEvents().subscribe(
+        (events: Event[]) => {
+          this.events = events;
+        });
+    }else{
+      this.ticketService.getUserTickets().subscribe(
+        (tickets: Ticket[]) => {
+          console.log(this.tickets);
+          this.tickets=tickets;
+        },error => {
+          alert("Failed to load tickets");
+        });
+    }
+  }
+  openTicketPage(ticket: Ticket) {
+    this.router.navigate(['/your-ticket', ticket.TicketId]);
   }
 
 }

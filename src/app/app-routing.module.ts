@@ -7,6 +7,7 @@ import {UserpageComponent} from "./userpage/userpage.component";
 import {HomeComponent} from "./home/home.component";
 import {FindEventComponent} from "./find-event/find-event.component";
 import {AddEventComponent} from "./add-event/add-event.component";
+import {TicketComponent} from "./ticket/ticket.component";
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -14,7 +15,10 @@ const routes: Routes = [
   {path: 'user', component: UserpageComponent},
   {path: '', component: HomeComponent},
   {path: 'events', component: FindEventComponent},
-  {path: 'add-event', component: AddEventComponent}
+  {path: 'add-event', component: AddEventComponent},
+  {path: 'buy-ticket/:eventId', component: TicketComponent},
+  {path: 'your-ticket/:ticketId', component: TicketComponent},
+  {path: 'events-find/:query', component: FindEventComponent}
 ];
 
 @NgModule({

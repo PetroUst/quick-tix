@@ -18,29 +18,30 @@
       <p class = "value">{{email}}</p>
     </div>
   </div>
-  <div id="user-tickets" [hidden]="userRole==='SuperUser'">
+  <div id="user-tickets" [hidden]="userRole==='SuperUser'" >
     <h2>Your current tickets</h2>
     <ul class="list-tickets">
-      <li class="ticket-item">
+      <li class="ticket-item" *ngFor="let ticket of tickets" (click)="openTicketPage(ticket)">
         <div class="row-container">
           <p>Event:</p>
-          <p class="event-name">StAnDuP LviV</p>
+          <p class="event-name">{{ticket.EventName}}</p>
         </div>
         <div class="row-container">
           <p>Time:</p>
-          <p class="date-time">17:00, 20 May 2023</p>
+          <p class="date-time">{{ticket.Time}}</p>
         </div>
         <div class="row-container">
           <p>Location:</p>
-          <p class="location">Pub "Good Friend 1, Lviv"</p>
+          <p class="location">{{ticket.Location}}</p>
         </div>
         <div class="row-container">
           <p>Price:</p>
-          <p class="price">20$</p>
+          <p class="price">{{ticket.Price+'$'}}</p>
         </div>
         <div class="row-container">
           <p>Status:</p>
-          <p class="state">Booked</p>
+          <p class="state" [hidden]="!ticket.IsBooked || ticket.IsPaid">Booked</p>
+          <p class="state" [hidden]="!ticket.IsPaid">Purchased</p>
         </div>
       </li>
     </ul>
