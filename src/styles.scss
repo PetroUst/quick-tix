@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import "src/styles/variables.scss";
+html{
+  min-height: 100vh;
+  background-image: url("/assets/images/gs_main.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-family: $font-family;
+  background-color: #000;
+}
+* {
+  box-sizing: border-box;
+}

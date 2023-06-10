@@ -63,6 +63,10 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "project:build",
+            "proxyConfig": "proxy.config.json"
+          },
           "configurations": {
             "production": {
               "browserTarget": "quick-tix:build:production"
@@ -100,5 +104,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

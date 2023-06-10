@@ -1,0 +1,31 @@
+<form (submit)="onSubmit()">
+  <div>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" [(ngModel)]="username" required>
+  </div>
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" [(ngModel)]="name" required>
+  </div>
+  <div>
+    <label for="surname">Surname:</label>
+    <input type="text" id="surname" name="surname" [(ngModel)]="surname" required>
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" [(ngModel)]="email" required>
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" [(ngModel)]="password" required>
+  </div>
+  <div>
+    <label for="confirm-password">Confirm Password:</label>
+    <input type="password" id="confirm-password" name="confirm-password" [(ngModel)]="confirmPassword" required>
+  </div>
+  <div>
+    <label for="organizer-flag">I am organizer:</label>
+    <input type="checkbox" id="organizer-flag" name="organizer-flag" (change)="onChange($event)">
+  </div>
+  <button type="submit" id="register-button">Register</button>
+</form>

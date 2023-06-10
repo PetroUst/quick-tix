@@ -1,0 +1,10 @@
+
+<form (submit)="onSubmit()">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" [(ngModel)]="username"><br><br>
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" [(ngModel)]="password"><br><br>
+  <button type="submit">Log In</button>
+  <p>Don't have an account? <a routerLink="/signup">Click here!</a></p>
+</form>
+

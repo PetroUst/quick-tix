@@ -1,0 +1,93 @@
+@import "src/styles/variables.scss";
+
+h1{
+  font-size: 2rem;
+  color: $primary-color;
+  margin: 30px;
+}
+form {
+  margin: 150px auto;
+  max-width: 700px;
+
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  animation: slide-in 1s ease-out;
+}
+div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  label {
+    display: block;
+    flex:1;
+    font-size: 1.5rem;
+    color: $dark-text;
+    margin-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="datetime-local"],
+  input[type="number"]{
+    flex:2;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+  }
+}
+
+button {
+  background-color: $primary-color;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: darken($primary-color, 10%);
+}
+
+p {
+  font-size: 1.2rem;
+  color: $dark-text;
+  margin-top: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: $primary-color;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: darken($primary-color, 10%);
+}
+
+@media only screen and (max-width: 700px) {
+  form {
+    margin-top: 100px;
+    max-width: 400px;
+  }
+  label{
+    flex:1;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    flex:2;
+
+  }
+}

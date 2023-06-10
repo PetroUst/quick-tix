@@ -1,0 +1,16 @@
+$primary-color: #007bff;
+$secondary-color: #95aeb1;
+$background-color:#fff;
+$primary-text-color:#f2f2f2;
+$dark-text:#000000;
+$font-family: Arial, sans-serif;
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

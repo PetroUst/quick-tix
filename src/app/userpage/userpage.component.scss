@@ -1,0 +1,99 @@
+@import "src/styles/variables.scss";
+main {
+  margin: 100px auto;
+  max-width: 700px;
+  padding: 40px;
+  background-color: $background-color;
+  border-radius: 5px;
+  text-align: left;
+  animation: slide-in 1s ease-out;
+}
+h1{
+  color: $primary-color;
+  font-size: 1.5rem;
+}
+.user-data{
+  align-items: center;
+  margin-bottom: 300px;
+}
+.row-container {
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: row;
+  // background-color: gray;
+  margin-bottom: 0px;
+}
+.field-name {
+  font-size: 1.2rem;
+  flex:1;
+  padding: 10px;
+  color: $secondary-color ;
+  border: none;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.value {
+  width: 50%;
+  flex:3;
+  padding: 10px;
+  font-size: 1.2rem;
+  margin-bottom: 0;
+  border: none;
+  border-radius: 5px;
+  background-color: $primary-text-color;
+}
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px; /* Adjust the height if needed */
+}
+.add-Event {
+  background-color: $primary-color;
+
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+h2{
+  color: $primary-color;
+  padding-top: 40px;
+  font-size: 1.5rem;
+}
+ul{
+  list-style:none;//make none
+  padding-left: 0;
+}
+
+li{
+  .row-container{
+    background-color: $primary-text-color;
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: row;
+    // background-color: gray;
+    margin-bottom: 0px;
+  }
+  p {
+    font-size: 1.2rem;
+    flex:1;
+    padding: 10px;
+    border: none;
+    margin-bottom: 0;
+    text-align: left;
+  }
+  margin-bottom: 10px;
+}
+@media only screen and (max-width: 700px) {
+  main {
+    max-width: 500px;
+  }
+}

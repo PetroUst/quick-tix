@@ -1,0 +1,19 @@
+<ng-container *ngIf="router.url !=='/signup' && router.url!=='/login'&&router.url!=='/forgot-password'&&!router.url.includes('/reset-password')">
+<header class="header">
+  <nav>
+    <div class="nav-left">
+      <p class="logo" routerLink="/">QuickTix</p>
+      <img id="search-icon" src="assets/images/search.png" alt="search-icon">
+      <form id="search">
+        <input type="search" placeholder="Search...">
+      </form>
+    </div>
+    <ul>
+      <li [hidden]="username" id="login-link"><a routerLink="/login">Log in</a></li>
+      <li [hidden]="username" id="signup-link"><a routerLink="/signup">Sign up</a></li>
+      <li [hidden]="!username" (click)="logout()"><a>Log out</a></li>
+      <li [hidden]="!username"><a routerLink="/user">{{username}}</a></li>
+    </ul>
+  </nav>
+</header>
+</ng-container>

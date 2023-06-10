@@ -1,0 +1,97 @@
+@import "src/styles/variables.scss";
+
+.searcher{
+  float: left;
+  display: flex;
+  align-items: center;
+  order: -1;
+}
+
+h2{
+  color: $primary-color;
+  text-align: center;
+}
+
+input[type="search"] {
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  color: #333;
+  background-color: #f1f1f1;
+  outline: none;
+  transition: background-color 0.2s ease-in-out;
+  width: 500px;
+}
+input[type="search"]:focus {
+  background-color: $background-color;
+}
+
+
+main {
+  margin: 100px auto;
+  max-width: 700px;
+  padding: 40px;
+  background-color: $background-color;
+  border-radius: 5px;
+  text-align: left;
+  align-items: center;
+  animation: slide-in 1s ease-out;
+}
+.city-list {
+  list-style: none;
+  border-radius: 20px;
+  display: block;
+}
+
+.city-list li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.city-list li:hover {
+  background-color: #eee;
+  color: $primary-color;
+}
+.list-events{
+  margin-top: 100px;
+  list-style:none;//make none
+  padding-left: 0;
+}
+li{
+  .row-container{
+    background-color: $primary-text-color;
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: row;
+    // background-color: gray;
+    margin-bottom: 0px;
+  }
+  p {
+    font-size: 1.2rem;
+    flex:1;
+    padding: 10px;
+    border: none;
+    margin-bottom: 0;
+    text-align: left;
+  }
+  margin-bottom: 10px;
+}
+.row-container {
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: row;
+  // background-color: gray;
+  margin-bottom: 0px;
+}
+
+
+@media screen and (max-width: 600px) {
+  input[type="search"]{
+    width: 150px;
+    font-size: 0.8rem;
+  }
+}

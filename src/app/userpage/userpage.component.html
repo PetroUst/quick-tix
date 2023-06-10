@@ -1,0 +1,78 @@
+<main>
+  <div id="user-data">
+    <h1>Your personal data</h1>
+    <div class="row-container">
+      <p class = "field-name">Username</p>
+      <p class = "value">{{username}}</p>
+    </div>
+    <div class="row-container">
+      <p class = "field-name">Name</p>
+      <p class = "value">{{name}}</p>
+    </div>
+    <div class="row-container">
+      <p class = "field-name">Surname</p>
+      <p class = "value">{{surname}}</p>
+    </div>
+    <div class="row-container">
+      <p class = "field-name">Email</p>
+      <p class = "value">{{email}}</p>
+    </div>
+  </div>
+  <div id="user-tickets" [hidden]="userRole==='SuperUser'">
+    <h2>Your current tickets</h2>
+    <ul class="list-tickets">
+      <li class="ticket-item">
+        <div class="row-container">
+          <p>Event:</p>
+          <p class="event-name">StAnDuP LviV</p>
+        </div>
+        <div class="row-container">
+          <p>Time:</p>
+          <p class="date-time">17:00, 20 May 2023</p>
+        </div>
+        <div class="row-container">
+          <p>Location:</p>
+          <p class="location">Pub "Good Friend 1, Lviv"</p>
+        </div>
+        <div class="row-container">
+          <p>Price:</p>
+          <p class="price">20$</p>
+        </div>
+        <div class="row-container">
+          <p>Status:</p>
+          <p class="state">Booked</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+    <div id="user-events" [hidden]="userRole==='User'">
+      <h2>Your current events</h2>
+      <ul class="list-tickets">
+        <li class="ticket-item" *ngFor="let event of events">
+          <div class="row-container">
+            <p>Event:</p>
+            <p class="event-name">{{event.EventName}}</p>
+          </div>
+          <div class="row-container">
+            <p>Time:</p>
+            <p class="date-time">{{event.Time}}</p>
+          </div>
+          <div class="row-container">
+            <p>City:</p>
+            <p class="city">{{event.City}}</p>
+          </div>
+          <div class="row-container">
+            <p>Location:</p>
+            <p class="location">{{event.Location}}</p>
+          </div>
+          <div class="row-container">
+            <p>Price:</p>
+            <p class="price">{{event.Price+'$'}}</p>
+          </div>
+        </li>
+      </ul>
+      <div class="center-container">
+        <button class="add-Event" routerLink="/add-event">Ad new event</button>
+      </div>
+    </div>
+</main>
