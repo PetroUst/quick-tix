@@ -67,6 +67,11 @@ h2{
   padding-top: 40px;
   font-size: 1.5rem;
 }
+.no-items{
+  color: $primary-color;
+  font-size: 1.5rem;
+  text-align: center;
+}
 ul{
   list-style:none;//make none
   padding-left: 0;

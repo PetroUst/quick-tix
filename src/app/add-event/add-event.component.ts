@@ -36,7 +36,7 @@ export class AddEventComponent {
     this.eventService.addEvent(event).subscribe(
       (response: string) => {
         console.log('response', response);
-        // this.router.navigate(['/user']);
+        this.router.navigate(['/user']);
       }, (error: { error: string; }) => {
         if (error.error) {
           alert(error.error);

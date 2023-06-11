@@ -80,6 +80,7 @@ export class TicketComponent implements OnInit {
     this.ticketService.saveTicket(data).subscribe(
 (response: string) => {
           console.log('response', response);
+          this.router.navigate(['/user']);
         }, (error: { error: string; }) => {
         console.log(error);
         if (error.error) {

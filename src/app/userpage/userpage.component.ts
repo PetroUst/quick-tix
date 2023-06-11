@@ -34,24 +34,26 @@ export class UserpageComponent implements OnInit {
         this.surname = response.Surname;
         this.email = response.Email;
         this.userRole = response.Role;
+        if (this.userRole === 'SuperUser') {
+          this.eventService.getUserEvents().subscribe(
+            (events: Event[]) => {
+              this.events = events;
+            });
+        }else if(this.userRole === 'User'){
+          this.ticketService.getUserTickets().subscribe(
+            (tickets: Ticket[]) => {
+              console.log(this.tickets);
+              this.tickets=tickets;
+            },error => {
+              alert("Failed to load tickets");
+            });
+        }
       },
       (error) => {
         console.error(error);
       });
-    if (this.userRole === 'SuperUser') {
-      this.eventService.getUserEvents().subscribe(
-        (events: Event[]) => {
-          this.events = events;
-        });
-    }else{
-      this.ticketService.getUserTickets().subscribe(
-        (tickets: Ticket[]) => {
-          console.log(this.tickets);
-          this.tickets=tickets;
-        },error => {
-          alert("Failed to load tickets");
-        });
-    }
+
+
   }
   openTicketPage(ticket: Ticket) {
     this.router.navigate(['/your-ticket', ticket.TicketId]);

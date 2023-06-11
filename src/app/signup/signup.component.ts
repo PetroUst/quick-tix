@@ -17,9 +17,16 @@ export class SignupComponent {
   name = '';
   surname = '';
   organizerFlag: boolean = false;
+
   onChange(isChecked: any) {
     this.organizerFlag = !this.organizerFlag;
   }
+
+  isEmailValid(email: string): boolean {
+    const emailPattern: RegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return emailPattern.test(email);
+  }
+
   onSubmit() {
     if (this.username === '' || this.password === '' || this.email === '' || this.name === '' || this.surname === '') {
       this.confirm('Please fill in all fields');
@@ -30,6 +37,12 @@ export class SignupComponent {
       this.confirm('Passwords do not match');
       return;
     }
+
+    if (!this.isEmailValid(this.email)) {
+      this.confirm('Please enter a valid email address');
+      return;
+    }
+
 
     if (this.password.length < 8) {
       this.confirm('Password must be at least 8 characters long');
