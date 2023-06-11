@@ -52,8 +52,6 @@ export class UserpageComponent implements OnInit {
       (error) => {
         console.error(error);
       });
-
-
   }
   openTicketPage(ticket: Ticket) {
     this.router.navigate(['/your-ticket', ticket.TicketId]);

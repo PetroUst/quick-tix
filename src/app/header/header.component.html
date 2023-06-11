@@ -5,7 +5,7 @@
       <p class="logo" routerLink="/">QuickTix</p>
       <img id="search-icon" src="assets/images/search.png" alt="search-icon" *ngIf="!router.url.includes('events')">
       <form id="search" *ngIf="!router.url.includes('events')">
-        <input type="search" placeholder="Search..." [(ngModel)]="searchQuery" (keyup)="onKeyUp($event)">
+        <input type="search" placeholder="Search..." name="search" [(ngModel)]="searchQuery" (keyup)="onKeyUp($event)">
       </form>
     </div>
     <ul>

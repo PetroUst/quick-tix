@@ -29,23 +29,23 @@ export class SignupComponent {
 
   onSubmit() {
     if (this.username === '' || this.password === '' || this.email === '' || this.name === '' || this.surname === '') {
-      this.confirm('Please fill in all fields');
+      alert('Please fill in all fields');
       return;
     }
 
     if (this.password !== this.confirmPassword) {
-      this.confirm('Passwords do not match');
+      alert('Passwords do not match');
       return;
     }
 
     if (!this.isEmailValid(this.email)) {
-      this.confirm('Please enter a valid email address');
+      alert('Please enter a valid email address');
       return;
     }
 
 
     if (this.password.length < 8) {
-      this.confirm('Password must be at least 8 characters long');
+      alert('Password must be at least 8 characters long');
       return;
     }
 
@@ -63,13 +63,11 @@ export class SignupComponent {
       }, (error: { error: string; }) => {
         console.log(error);
         if (error.error) {
-          this.confirm(error.error);
+          alert(error.error);
         } else {
-          this.confirm('Failed to connect to the server');
+          alert('Failed to connect to the server');
         }
       }
     );
   }
-
-  protected readonly confirm = confirm;
 }

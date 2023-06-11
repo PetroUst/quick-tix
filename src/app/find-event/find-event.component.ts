@@ -13,7 +13,7 @@ export class FindEventComponent implements OnInit{
   events: Event[] = [];
   searchKeyword: string = '';
   filteredEvents: Event[] = [];
-  constructor(private eventService: EventService, private router: Router) { }
+  constructor(private eventService: EventService, public router: Router) { }
 
   ngOnInit(): void {
     this.eventService.getAllEvents().subscribe(
